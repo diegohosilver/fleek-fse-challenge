@@ -1,0 +1,30 @@
+{
+  "name": "fleek-fsa-api",
+  "version": "0.1.0",
+  "description": "Api in NodeJS for handling authentication and managing simple API keys",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/le0dime/fleek-fse-challenge.git"
+  },
+  "keywords": [
+    "IPFS",
+    "Proxy",
+    "keys"
+  ],
+  "author": "Diego Silvera de Souza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/le0dime/fleek-fse-challenge/issues"
+  },
+  "homepage": "https://github.com/le0dime/fleek-fse-challenge#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
