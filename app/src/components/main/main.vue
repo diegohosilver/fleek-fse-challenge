@@ -25,16 +25,27 @@
 <script>
 
 import KeysManager from '../keys-manager/keys-manager.vue';
+import {Utils} from '../../services/utils.js';
 
 export default {
   components: {
       KeysManager
+  },
+  computed: {
+      isLoggedIn() {
+          return Utils.hasValue(this.$store.state.user);
+      }
   },
   data() {
     return {
       menuVisible: false,
     };
   },
+  created() {
+      if (!this.isLoggedIn) {
+          this.$router.push('/login');
+      }
+  }
 };
 </script>
 <style lang="scss">

@@ -33,10 +33,16 @@
     <div class="background" />
   </div>
 </template>
-
 <script>
+
+import {Utils} from '../../services/utils.js';
+
 export default {
-  name: "App",
+  computed: {
+    isLoggedIn() {
+      return Utils.hasValue(this.$store.state.user);
+    },
+  },
   data() {
     return {
       loading: false,
@@ -55,6 +61,11 @@ export default {
         this.loading = false;
       }, 5000);
     },
+  },
+  created() {
+    if (this.isLoggedIn) {
+      this.$router.push("/main");
+    }
   },
 };
 </script>
