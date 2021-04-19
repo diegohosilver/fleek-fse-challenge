@@ -11,15 +11,25 @@
       </md-app-toolbar>
       <md-app-content>
         <md-tabs>
-          <md-tab id="tab-home" md-label="Home" md-icon="home"> Heyy </md-tab>
-          <md-tab id="tab-keys" md-label="Manage Keys" md-icon="manage_accounts"></md-tab>
+          <md-tab id="tab-home" md-label="Home" md-icon="home">  
+              
+          </md-tab>
+          <md-tab id="tab-keys" md-label="Manage Keys" md-icon="manage_accounts">
+              <keys-manager></keys-manager>
+          </md-tab>
         </md-tabs>
       </md-app-content>
     </md-app>
   </div>
 </template>
 <script>
+
+import KeysManager from '../keys-manager/keys-manager.vue';
+
 export default {
+  components: {
+      KeysManager
+  },
   data() {
     return {
       menuVisible: false,
