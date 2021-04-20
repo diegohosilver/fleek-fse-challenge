@@ -1,9 +1,9 @@
 const ipfsClient = require('ipfs-http-client')
-const ipfsConfig = require('../config/ipfs.config');
+const ipfsConfig = require('./config/ipfs.config');
 
-const host = ipfsConfig.host;
-const port = ipfsConfig.port;
-const protocol = ipfsConfig.protocol;
+const host = ipfsConfig.HOST;
+const port = ipfsConfig.PORT;
+const protocol = ipfsConfig.PROTOCOL;
 
 const ipfs = ipfsClient({
 	host,
@@ -13,4 +13,4 @@ const ipfs = ipfsClient({
 
 console.log(`IPFS running on ${protocol}://${host}:${port}`)
 
-export default ipfs
+module.exports = ipfs

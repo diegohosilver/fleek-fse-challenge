@@ -23,7 +23,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "host-validation": "^2.0.1",
-    "ipfs-http-client": "^49.0.4"
+    "ipfs-http-client": "^49.0.4",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

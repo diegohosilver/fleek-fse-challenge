@@ -1,5 +1,6 @@
 const db = require('../models');
 const Key = db.key;
+const Request = db.request;
 
 const proxyService = {};
 
@@ -11,7 +12,9 @@ proxyService.tokenIsValid = async (token) => {
 
 		let key = await Key.findOne({ id: token }).exec();
 
-		valid = !key.deleted && key.enabled;
+		if (key != null)
+
+			valid = !key.deleted && key.enabled;
 	}
 	catch(err){
 
@@ -19,6 +22,27 @@ proxyService.tokenIsValid = async (token) => {
 	}
 
 	return valid;
+}
+
+proxyService.logRequest = async (key, size, status) => {
+
+	try {
+
+		let date = new Date();
+
+		let request = new Request({
+			key,
+			size,
+			date,
+			status
+		})
+
+		await request.save();
+	}
+	catch(err) {
+
+		console.log(err);
+	}
 }
 
 module.exports = proxyService;
