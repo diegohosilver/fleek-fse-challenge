@@ -1,7 +1,7 @@
 {
-  "name": "fleek-fsa-api",
+  "name": "fleek-fsa-ipfs",
   "version": "0.1.0",
-  "description": "Api in NodeJS for handling authentication and managing simple API keys",
+  "description": "Api in NodeJS to make use of local IPFS instance",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"
@@ -12,8 +12,7 @@
   },
   "keywords": [
     "IPFS",
-    "Proxy",
-    "keys"
+    "API"
   ],
   "author": "Diego Silvera de Souza",
   "license": "ISC",
@@ -22,12 +21,10 @@
   },
   "homepage": "https://github.com/le0dime/fleek-fse-challenge#readme",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "http-proxy-middleware": "^1.2.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.12.4"
+    "host-validation": "^2.0.1",
+    "ipfs-http-client": "^49.0.4",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

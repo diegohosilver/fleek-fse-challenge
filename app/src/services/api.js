@@ -35,6 +35,13 @@ export class Api {
 		return await this.post(path, data);
 	}
 
+	async listRequests() {
+
+		let path = '/requests';
+
+		return await this.get(path);
+	}
+
 	async listKeys() {
 
 		let path = '/keys';

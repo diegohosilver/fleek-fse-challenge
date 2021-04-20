@@ -6,12 +6,14 @@ let bcrypt = require("bcryptjs");
 const dbConfig = require('../config/db.config');
 const User = require("./user.model");
 const Key = require("./key.model");
+const Request = require("./request.model");
 
 const db = {};
 
 db.mongoose = mongoose;
 db.user = User;
 db.key =  Key;
+db.request = Request;
 
 db.setDefaultData = function() {
     User.estimatedDocumentCount((err, count) => {
