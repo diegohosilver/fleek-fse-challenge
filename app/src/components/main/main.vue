@@ -18,7 +18,7 @@
 			<md-app-content>
 				<md-tabs>
 					<md-tab id="tab-home" md-label="Home" md-icon="home">
-						<requests-viewer></requests-viewer>
+						<request-viewer></request-viewer>
 					</md-tab>
 					<md-tab id="tab-keys" md-label="Manage Keys" md-icon="manage_accounts">
 						<keys-manager></keys-manager>
@@ -30,13 +30,13 @@
 </template>
 <script>
 
-	import RequestsViewer from "../requests-viewer/request-viewer.vue";
+	import RequestViewer from "../request-viewer/request-viewer.vue";
 	import KeysManager from "../keys-manager/keys-manager.vue";
 	import { Utils } from "../../services/utils.js";
 
 	export default {
 		components: {
-			RequestsViewer,
+			RequestViewer,
 			KeysManager
 		},
 		computed: {
