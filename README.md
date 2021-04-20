@@ -11,6 +11,7 @@ This repository contains 3 projects:
 - `./app`
 - `./api`
 - `./ipfs`
+
 You will need to open a terminal on each root and install dependencies with `npm install` command.
 
 ## Running
