@@ -10,6 +10,7 @@ import { User } from './services/user';
 import { Api } from './services/api';
 import { Storage } from './services/storage';
 import { Keys } from './services/keys';
+import { Requests } from './services/requests';
 
 Vue.use(VueMaterial);
 Vue.use(VueClipboard);
@@ -18,6 +19,7 @@ let storage = new Storage({prefix: 'fleek-fse', localStorage});
 let api = new Api({options: {apiRoot: 'http://localhost:3000'}, storage});
 Vue.prototype.$user = new User({api, store});
 Vue.prototype.$keys = new Keys({api, store});
+Vue.prototype.$requests = new Requests({api, store});
 
 const app = new Vue({
     router,

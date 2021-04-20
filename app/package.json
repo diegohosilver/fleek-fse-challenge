@@ -23,6 +23,8 @@
   "homepage": "https://github.com/le0dime/fleek-fse-challenge#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
     "npm": "^7.10.0",
     "vue": "^2.6.12",
     "vue-clipboard2": "^0.3.1",

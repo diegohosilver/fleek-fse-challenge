@@ -6,14 +6,14 @@ exports.listRequests = (req, res) => {
 	// this will get the last 50 requests
 	try {
 		
-		Request.find().sort({ date: -1 }).limit(50).exec((err, requests) => {
+		Request.find().sort({ date: 1 }).limit(50).exec((err, requests) => {
 
 			if (err) {
 
 				throw err;
 			}
 
-			res.send(requests.map(({key, size, date, status}) => ({key, size, date, status})))
+			res.send(requests.map(({id, key, size, date, status}) => ({id, key, size, date, status})))
 		});
 	}
 	catch(err) {
