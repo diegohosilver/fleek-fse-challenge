@@ -27,7 +27,7 @@ Every project has the same startup command: `npm run start`.
 	- IPFS API -> 3001
 	- IPFS Node -> 5000
 - App credentials:
-	- mail: `key-creator@fleek-challenge.com"`
+	- mail: `key-creator@fleek-challenge.com`
 	- password: `9r@QS!2u`
 
 ## Request example
