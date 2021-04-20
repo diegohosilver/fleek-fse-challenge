@@ -1,0 +1,32 @@
+{
+  "name": "fleek-fsa-ipfs",
+  "version": "0.1.0",
+  "description": "Api in NodeJS to make use of local IPFS instance",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/le0dime/fleek-fse-challenge.git"
+  },
+  "keywords": [
+    "IPFS",
+    "API"
+  ],
+  "author": "Diego Silvera de Souza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/le0dime/fleek-fse-challenge/issues"
+  },
+  "homepage": "https://github.com/le0dime/fleek-fse-challenge#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "host-validation": "^2.0.1",
+    "ipfs-http-client": "^49.0.4",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
