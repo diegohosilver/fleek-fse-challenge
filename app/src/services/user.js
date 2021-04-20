@@ -1,22 +1,17 @@
 export class User {
 
-    constructor({api, store, storage}) {
+    constructor({api, store}) {
 
         this.api = api;
         this.store = store;
-        this.storage = storage;
     }
 
     async signin(email, password) {
 
         let data = {email, password};
 
-        let user = await this.api.login(data);
+        let user = await this.api.signin(data);
 
-        if (this.store) {
-            this.store.commit('set', {user});
-        }
-
-        this.storage.set('user', user);
+        this.store.commit('userLoggedIn', user);
     }
 }

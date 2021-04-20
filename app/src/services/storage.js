@@ -1,55 +1,55 @@
-import {Utils} from './utils.js';
+import { Utils } from './utils.js';
 
 export class Storage {
 
-    constructor(props) {
+	constructor(props) {
 
-        this.prefix = props.prefix;
+		this.prefix = props.prefix;
 
-        this.storage = props.localStorage;
-    }
+		this.storage = props.localStorage;
+	}
 
-    set(name, value) {
+	set(name, value) {
 
-        if (!this.storage) return;
+		if (!this.storage) return;
 
-        if (!name) return;
+		if (!name) return;
 
-        if (Utils.isNullOrUndefined(value)) return this.unset(name);
+		if (Utils.isNullOrUndefined(value)) return this.unset(name);
 
-        value = Utils.stringify(value);
+		value = Utils.stringify(value);
 
-        this.storage.setItem(this.key(name), value);
-    }
+		this.storage.setItem(this.key(name), value);
+	}
 
-    unset(name) {
+	unset(name) {
 
-        if (!this.storage) return;
+		if (!this.storage) return;
 
-        this.storage.removeItem(this.key(name));
-    }
+		this.storage.removeItem(this.key(name));
+	}
 
-    get(name, def) {
+	get(name, def) {
 
-        if (!this.storage) return def;
+		if (!this.storage) return def;
 
-        let value = this.storage.getItem(this.key(name));
+		let value = this.storage.getItem(this.key(name));
 
-        if (value === null) return def;
+		if (value === null) return def;
 
-        if (value === 'undefined') return def;
+		if (value === 'undefined') return def;
 
-        try {
+		try {
 
-            return JSON.parse(value);
-        } catch (ignore) {
+			return JSON.parse(value);
+		} catch (ignore) {
 
-            return value;
-        }
-    }
+			return value;
+		}
+	}
 
-    key(name) {
+	key(name) {
 
-        return (this.prefix) ? `${this.prefix}-${name}` : name;
-    }
+		return (this.prefix) ? `${this.prefix}-${name}` : name;
+	}
 }

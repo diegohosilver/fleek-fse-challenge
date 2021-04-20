@@ -10,6 +10,8 @@ module.exports = function (app) {
         next();
     });
 
+	app.get("/keys", [jwtAuth.verifyToken], controller.listKeys)
+
     app.post("/keys/create", [jwtAuth.verifyToken], controller.addKey);
 
     app.post("/keys/bulk-update", [jwtAuth.verifyToken], controller.bulkUpdateKeys);
