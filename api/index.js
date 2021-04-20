@@ -12,9 +12,6 @@ app.use(cors(corsOptions));
 // parse requests of content-type - application/json
 app.use(express.json());
 
-// parse requests of content-type - application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: true }));
-
 // database initialization
 const db = require("./models");
 db.initialize();
@@ -26,6 +23,7 @@ app.get('/', (req, res) => {
 // routes setup
 require('./routes/auth.routes')(app);
 require('./routes/keys.routes')(app);
+require('./routes/proxy.routes')(app);
 
 const port = 3000;
 app.listen(port, () => {
