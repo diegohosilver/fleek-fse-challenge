@@ -14,6 +14,16 @@ export const Utils = {
         return !isEmpty(value);
     },
 
+	isNullOrUndefined(value) {
+
+        return (value === null || value === undefined);
+    },
+
+	isNumber(value) {
+
+        return (!isNaN(value) && !Utils.isArray(value));
+    },
+
     isArray(value) {
 
         return Array.isArray(value);
@@ -38,6 +48,27 @@ export const Utils = {
         if (!items) return false;
 
         return items.length >= min;
+    },
+
+	isObject(value) {
+
+        return (
+
+            value &&
+
+            typeof value === 'object' &&
+
+            !Utils.isArray(value)
+        );
+    },
+
+	stringify(obj, size) {
+
+        if (!obj) return obj;
+
+        if (!Utils.isObject(obj) && !Utils.isArray(obj)) return obj;
+
+        return (size) ? JSON.stringify(obj, null, size) : JSON.stringify(obj);
     },
 
     merge(list = [], updates = [], prop = 'id') {
